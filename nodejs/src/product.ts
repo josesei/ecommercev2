@@ -1,36 +1,35 @@
 import {Thing} from "./thing";
+import { Review } from "./review";
 
 //schema.org/product
 export class Product extends Thing{
-    #additionalProperty:any;
-    #aggregateRating:any;
-    #audience:any;
-    #award:any
-    #brand:any;
-    #category:any;
-    #color:any;
-    #depth:any;
-    #gtin:any;
-    #hasMerchantReturnPolicy:any;
-    #heigth:any;
-    #isAccessoryOrSparePartFor:any;
-    #isConsumableFor:any;
-    #isRelatedTo:any;
-    #isSimilarTo:any;
-    #itemCondition:any;
-    #logo:any;
-    #manufacturer:any;
-    #material:any;
-    #model:any;
-    #mpn:any;
-    #offers:any;
-    #productID:any;
-    #releaseDate:any;
-    #review:any;
-    #sku:any;
-    #slogan:any;
-    #weigth:any;
-    #width:any;
+    #aggregateRating:AggregateRating;
+    #audience:Audience;
+    #award:String;
+    #brand:Brand;
+    #category:ProductCategory;
+    #color:String;
+    #depth:Distance;
+    #gtin:String;
+    #hasMerchantReturnPolicy:MerchantReturnPolicy;
+    #heigth:Distance;
+    #isAccessoryOrSparePartFor:String;
+    #isConsumableFor:String;
+    #isRelatedTo:String;
+    #isSimilarTo:String;
+    #itemCondition:CondicionProducto;
+    #logo:String;
+    #manufacturer:Manufacturer;
+    #material:String;
+    #model:ProductModel;
+    #mpn:String;
+    #productID:String;
+    #releaseDate:Date;
+    #review:Array<Review>;
+    #sku:String;
+    #slogan:String;
+    #weigth:QuantitativeValue;
+    #width:Distance;
     get productID(){
         return this.#productID;
     }
