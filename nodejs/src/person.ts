@@ -1,25 +1,23 @@
-import { Thing } from "./thing";
 import { PostalAddress } from "./postaladdress";
 import { Product } from "./product";
 import { Country } from "./country";
 
-export class Person extends Thing {
-    #additionalName?:String;
+export class Person {
+    #additionalName?:string;
     #address?:PostalAddress;
     #birthDate:Date;
-    #email:String;
-    #familyName:String;
-    #gender:String; // either MALE or FEMALE or OTHER
-    #givenName:String;
+    #email:string;
+    #familyName:string;
+    #gender:string; // either MALE or FEMALE or OTHER
+    #givenName:string;
     #postalLocations?:Array<PostalAddress>;
     #owns?:Array<Product>;
     #nationality:Country;
-    #ID?:String;
-    #IDType?:String;
-    #taxID?:String;
-    #telephone?:String;
-    constructor(email:String, givenName:String, familyName:String, nationality:Country, gender:String, birthDate:Date, additionalName?:String){
-        super();
+    #ID?:string;
+    #IDType?:string;
+    #taxID?:string;
+    #telephone?:string;
+    constructor(email:string, givenName:string, familyName:string, nationality:Country, gender:string, birthDate:Date, additionalName?:string){
         this.#email=email;
         this.#givenName=givenName;
         this.#familyName=familyName;
@@ -41,14 +39,14 @@ export class Person extends Thing {
             this.#postalLocations.push(postalLocation);
         }   
     }
-    setID(ID:String, IDType:String){
+    setID(ID:string, IDType:string){
         this.#ID=ID;
         this.#IDType=IDType;
     }
-    set taxID(taxID:String){
+    set taxID(taxID:string){
         this.#taxID=taxID;
     }
-    set telephone(telephone:String){
+    set telephone(telephone:string){
         this.#telephone=telephone;
     }
     set address(address:PostalAddress){

@@ -1,39 +1,51 @@
-import {Thing} from "./thing";
 import { Review } from "./review";
+import { AggregateRating } from "./aggregateRating";
+import { Weight } from "./weight"
+import { Distance } from "./distance";
 
 //schema.org/product
-export class Product extends Thing{
+export class Product {
     #aggregateRating:AggregateRating;
     #audience:Audience;
-    #award:String;
+    #award:string;
     #brand:Brand;
     #category:ProductCategory;
-    #color:String;
+    #color:string;
     #depth:Distance;
-    #gtin:String;
+    #gtin:string;
     #hasMerchantReturnPolicy:MerchantReturnPolicy;
     #heigth:Distance;
-    #isAccessoryOrSparePartFor:String;
-    #isConsumableFor:String;
-    #isRelatedTo:String;
-    #isSimilarTo:String;
+    #isAccessoryOrSparePartFor:string;
+    #isConsumableFor:string;
+    #isRelatedTo:string;
+    #isSimilarTo:string;
     #itemCondition:CondicionProducto;
-    #logo:String;
     #manufacturer:Manufacturer;
-    #material:String;
+    #material:string;
     #model:ProductModel;
-    #mpn:String;
-    #productID:String;
+    #mpn:string;
+    #name:string;
+    #productID:string;
     #releaseDate:Date;
     #review:Array<Review>;
-    #sku:String;
-    #slogan:String;
-    #weigth:QuantitativeValue;
+    #sku:string;
+    #slogan:string;
+    #weigth:Weight;
     #width:Distance;
+
+
+    constructor(){
+        
+    }
+
+
     get productID(){
         return this.#productID;
     }
-    set productID(id:String) {
+    get name(){
+        return this.#name;
+    }
+    set productID(id:string) {
         this.#productID = id;
     }
 }

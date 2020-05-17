@@ -3,12 +3,12 @@ import { Person } from "./person"
 import { Country } from "./country";
 
 export class User extends Person{
-    #UID:String; //System's own User ID, can be the e-mail
-    #password:String; //Hashed password
-    #registrationDate:String;
+    #UID:string; //System's own User ID, can be the e-mail
+    #password:string; //Hashed password
+    #registrationDate:Date;
     #sessions:Array<Session>;
 
-    constructor(email:String, givenName:String, familyName:String, nationality:Country, gender:String, birthDate:Date, password:String, registrationDate:String, additionalName:String){
+    constructor(email:string, givenName:string, familyName:string, nationality:Country, gender:string, birthDate:Date, password:string, registrationDate:Date, additionalName:string){
         super(email,givenName,familyName,nationality,gender,birthDate,additionalName);
         this.#UID=email;
         this.#password=password;

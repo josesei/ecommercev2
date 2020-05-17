@@ -1,18 +1,23 @@
-import { Thing } from "./thing";
 import { Rating } from "./rating";
+import { Product } from "./product";
 
-export class Review extends Thing {
-    #itemReviewed:Thing; // lo que se evalúa
-    #reviewAspect:String; // aspecto que se evalúa en la reseña ej: performance
-    #reviewBody:String; // cuerpo de la reseña
+export class Review {
+    #reviewAspect:string; // aspecto que se evalúa en la reseña ej: performance
+    #reviewBody:string; // cuerpo de la reseña
     #reviewRating:Rating; // rating asociado a la reseña
     //SEGUIR AGREGANDO
-    constructor(itemReviewed:Thing, reviewAspect:String, reviewBody: String, reviewRating:Rating){
-        super();
-        this.#itemReviewed=itemReviewed;
+    constructor(reviewAspect:string, reviewBody: string, reviewRating:Rating){
         this.#reviewAspect=reviewAspect;
         this.#reviewBody=reviewBody;
         this.#reviewRating=reviewRating;
+    }
+
+    get reviewBody(){
+        return this.#reviewBody;
+    }
+
+    get reviewRating(){
+        return this.#reviewRating;
     }
 
 

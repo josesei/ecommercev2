@@ -1,8 +1,8 @@
 //LONG-LIVED TOKEN STORED IN THE DB AND in httpOnly cookies in the client side
 export class RefreshToken {
-    #expiresIn: Number;
-    #token: String;
-    constructor(expiresIn:Number, token:String){
+    #expiresIn: number;
+    #token: string;
+    constructor(expiresIn:number, token:string){
         this.#expiresIn=expiresIn;
         this.#token=token;
     }
