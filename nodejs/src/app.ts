@@ -1,6 +1,6 @@
 import {} from "./entities/product";
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+
 const express = require("express");
 const app = express();
 
@@ -8,14 +8,7 @@ const productionUrl = "";
 const developmentUrl = "http://localhost";
 
 //DB CONNECTION
-mongoose.connect("mongodb://localhost:27017/ecommercev2", {useNewUrlParser: true}, (err:any)=>{
-    if(err) {
-        console.error("Could not connect to MongoDB");
-    }
-    else{
-        console.log("Connected to MongoDB")
-    }
-});
+
 
 
 

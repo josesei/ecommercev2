@@ -4,14 +4,10 @@ import { Review } from "./review";
 
 export class AggregateRating extends Rating {
     #itemReviewed:Product;
-    #ratingCount:number;
-    #reviewCount:number;
     //The constructor MUST RECEIVE a NOT NULL Array of size > 0
     constructor(itemReviewed:Product, reviews:Array<Review>){
         super(AggregateRating.obtainOverallRating(reviews), "General", undefined, "Los usuarios que compraron "+itemReviewed.name+ " le otorgaron esta calificación en promedio");
         this.#itemReviewed=itemReviewed;
-        this.#ratingCount=reviews.length;
-        this.#reviewCount=AggregateRating.obtainReviewCount(reviews);
     }
 
     static obtainReviewCount(reviews:Array<Review>){

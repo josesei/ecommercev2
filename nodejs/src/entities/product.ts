@@ -8,6 +8,7 @@ import { Brand } from "./brand";
 import { ProductCategory } from "./productCategory";
 import { MerchantReturnPolicy } from "./merchantReturnPolicy";
 
+
 //schema.org/product
 export class Product {
     #aggregateRating?:AggregateRating;
@@ -83,3 +84,10 @@ export class Product {
         this.#productID = id;
     }
 }
+
+export const ProductSchema = mongoose.Schema({
+    aggregateRating: {
+
+    }
+})
+    
