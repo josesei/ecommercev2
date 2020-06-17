@@ -6,12 +6,16 @@ export class PostalAddress {
     #postOfficeBoxNumber?:string; //The post office box number for PO box addresses
     #postalCode:string; //For example, 94043, can include letters
     #streetAddress:string; //For example, 1600 Amphitheatre Pkwy
-    constructor(country:string, locality:string, region:string, postalCode:string, streetAddress:string, postOfficeBoxNumber?:string){
+    #geoLat: number;
+    #geoLong: number;
+    constructor(country:string, locality:string, region:string, postalCode:string, streetAddress:string, geoLat:number, geoLong:number, postOfficeBoxNumber?:string){
         this.#addressCountry=country;
         this.#addressLocality=locality;
         this.#addressRegion=region;
         this.#postalCode=postalCode;
         this.#streetAddress=streetAddress;
+        this.#geoLat=geoLat;
+        this.#geoLong=geoLong;
         if(postOfficeBoxNumber){
             this.#postOfficeBoxNumber=postOfficeBoxNumber;
         }

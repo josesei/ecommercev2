@@ -1,5 +1,5 @@
 import { Rating } from "./rating";
-import { Product } from "./product";
+import { Product } from "../product/product";
 
 export class Review {
     #reviewAspect:string; // aspecto que se evalúa en la reseña ej: performance

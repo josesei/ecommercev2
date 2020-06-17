@@ -1,6 +1,6 @@
-import { PostalAddress } from "./postaladdress";
-import { Product } from "./product";
-import { Country } from "./country";
+import { PostalAddress } from "../location/postaladdress";
+import { Product } from "../product/product";
+import { Country } from "../location/country";
 
 export class Person {
     #additionalName?:string;

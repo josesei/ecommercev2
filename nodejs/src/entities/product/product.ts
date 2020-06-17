@@ -1,12 +1,12 @@
-import { Review } from "./review";
+import { Review } from "../util/review";
 import { AggregateRating } from "./aggregateRating";
-import { Weight } from "./weight"
-import { Distance } from "./distance";
-import { Audience } from "./audience";
+import { Weight } from "../util/weight"
+import { Distance } from "../util/distance";
+import { Audience } from "../util/audience";
 import { ItemCondition } from "./itemCondition";
 import { Brand } from "./brand";
 import { ProductCategory } from "./productCategory";
-import { MerchantReturnPolicy } from "./merchantReturnPolicy";
+import { MerchantReturnPolicy } from "../payment/merchantReturnPolicy";
 
 
 //schema.org/product
@@ -21,7 +21,7 @@ export class Product {
     #gtin?:string;
     #hasMerchantReturnPolicy?:MerchantReturnPolicy;
     #heigth:Distance;
-    #images:Array<string>
+    #images:Array<string>;
     #isAccessoryOrSparePartFor?:Array<Product>;
     #isConsumableFor?:Array<Product>;
     #isRelatedTo?:Array<Product>;
@@ -85,9 +85,3 @@ export class Product {
     }
 }
 
-export const ProductSchema = mongoose.Schema({
-    aggregateRating: {
-
-    }
-})
-    
