@@ -8,7 +8,7 @@ import { IPostalAddress } from "./postalAddress";
 import { ProcessEnvOptions } from "child_process";
 const mongoose = require("mongoose");
 const _ = require("lodash");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
 
 enum Gender {
     FEMALE = "FEMALE",
@@ -16,7 +16,7 @@ enum Gender {
     OTHER = "OTHER"
 }
 
-interface ISession extends Document {
+export interface ISession extends Document {
     token: string,
     expiresAt: number
 }
@@ -25,19 +25,18 @@ export interface IUser extends Document {
     email: string,
     password: string,
     session: Types.Array<ISession["_id"]>,
-    registrationDate: Date,
+    isVerified: Boolean,
     givenName: string,
     familyName: string,
     savedCart: Types.Array<IShoppingCart["_id"]>,
     order: Types.Array<IOrder["_id"]>,
     address: Types.Array<IPostalAddress["_id"]>,
-    nationality: ICountry["_id"],
-    gender: Gender,
-    birthDate: Date
+    nationality?: ICountry["_id"],
+    gender?: Gender,
+    birthDate?: Date
 }
 
-
-const UserSchema:Schema = new Schema({
+const UserSchema = new Schema({
     email: {type:String, required: true, minlength: 5, trim: true, unique:true},
     password: {type: String, required: true, trim: true},
     session:[
@@ -46,7 +45,7 @@ const UserSchema:Schema = new Schema({
             expiresAt:{type: Date}
         }
     ],
-    registrationDate: {type: Date, required: true},
+    isVerified: { type: Boolean, default: false },
     givenName: {type: String, required: true},
     familyName: {type:String, required: true},
     nationality: {type:Schema.Types.ObjectId, ref: 'Country', required: false},
@@ -61,7 +60,9 @@ const UserSchema:Schema = new Schema({
     postalAddress: [
         {type:Schema.Types.ObjectId, ref: 'PostalAddress'}
     ]  
-});
+}, {
+    timestamps: true,
+   });
 
 
 
